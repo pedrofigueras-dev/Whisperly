@@ -1,165 +1,90 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Whisperly — Contextual UX Copilot</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Whisperly — Contextual UX Copilot</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --brand: #ffd300;
+        --dark-bg: #3c3c3b;
+        --card-bg: #4b4b4a;
+        --text: #ffffff;
+        --muted: #d1d5db;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        font-family: "Inter", sans-serif;
+        background: var(--dark-bg);
+        color: var(--text);
+        line-height: 1.55;
+      }
+      header { width: 100%; padding: 4rem 1.5rem 5rem; text-align: center; }
+      .logo { max-width: 240px; margin: 0 auto 2rem; }
+      h1 { font-size: clamp(2.4rem, 8vw, 3.4rem); font-weight: 700; }
+      h1 span { color: var(--brand); }
+      .tagline { margin-top: 0.75rem; font-size: 1.2rem; color: var(--muted); }
+      .section { padding: 4.5rem 1.5rem; max-width: 1024px; margin: 0 auto; text-align: center; }
+      .features { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 1.75rem; margin-top: 3rem; }
+      .card { background: var(--card-bg); padding: 2rem 1.5rem; border-radius: 1.25rem; box-shadow: 0 4px 16px rgba(0,0,0,.35); transition: transform .15s ease; }
+      .card:hover { transform: translateY(-4px); }
+      .card h3 { font-weight: 600; margin-bottom: 0.5rem; color: var(--brand); }
+      .card p { color: var(--muted); }
+      .roadmap { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 2.5rem; }
+      .pill { background: var(--brand); color: var(--dark-bg); padding: 0.55rem 1.2rem; border-radius: 9999px; font-size: 0.9rem; font-weight: 600; }
+      footer { padding: 3rem 1.5rem; text-align: center; font-size: 0.9rem; color: var(--muted); }
+      footer a { color: var(--brand); text-decoration: none; font-weight: 600; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="symb-dark.png" alt="Whisperly logo" class="logo" />
+      <h1>Whisperly<span>.</span></h1>
+      <p class="tagline">Gentle guidance for any interface</p>
+    </header>
 
-  <!-- SEO / Share -->
-  <meta name="description" content="Whisperly: contextual UX copilot — captura tu pantalla y recibe sugerencias de UX/UI en un overlay ligero. Privacy‑first y usando tu propia API key.">
-  <meta property="og:title" content="Whisperly — Contextual UX Copilot">
-  <meta property="og:description" content="Gentle guidance for any interface. Tips de UX/UI en un overlay ligero, justo cuando los necesitas.">
-  <meta property="og:image" content="assets/symb-dark.png">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
+    <section class="section">
+      <h2>An assistant that <span style="color:var(--brand);">whispers</span> the next step</h2>
+      <p style="max-width:680px;margin:0 auto;margin-top:0.75rem;color:var(--muted);">
+        Whisperly watches any screen and subtly points out the best action, UX pitfalls and quick wins — in real time, on any website.
+      </p>
 
-  <!-- Favicon -->
-  <link rel="icon" href="assets/symb-dark.png" type="image/png"/>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css"/>
-</head>
-<body>
-  <!-- Navigation -->
-  <div class="nav" role="navigation" aria-label="Primary">
-    <div class="container nav-inner">
-      <div class="brand">
-        <img src="assets/symb-dark.png" alt="Whisperly logo"/>
-        <b>Whisperly</b>
-      </div>
-      <div>
-        <a class="btn" href="#features">Features</a>
-        <a class="btn cta" href="https://github.com/pedrofigueras-dev/Whisperly" target="_blank" rel="noopener">View on GitHub</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Hero -->
-  <header class="hero">
-    <div class="container hero-grid">
-      <div>
-        <div class="eyebrow"><span class="pill">Beta</span><span>Contextual UX Copilot</span></div>
-        <h1>Gentle guidance for any interface.</h1>
-        <p class="lead">Whisperly looks at your current screen and <b>whispers the next step</b>: usability pitfalls, quick wins, and smart actions — in real time, directly on top of the UI you’re using.</p>
-        <div class="small">Privacy‑first. Your own API key. Nothing stored.</div>
-      </div>
-      <div class="hero-art" aria-hidden="true">
-        <div class="mock">
-          <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-          <div class="mock-card">
-            <div class="panel">
-              <h4>Overlay Assist</h4>
-              <p>Subtle, edge‑of‑screen hints anchored to your current task. Never in the way.</p>
-            </div>
-            <div class="panel">
-              <h4>1‑click Capture</h4>
-              <p>Grab your tab. Let GPT‑4o and vision models analyze patterns and flows.</p>
-            </div>
-            <div class="panel">
-              <h4>Context Detection</h4>
-              <p>Understands DOM structure, forms, tables and navigation affordances.</p>
-            </div>
-            <div class="panel">
-              <h4>Smart Prompts</h4>
-              <p>Reusable prompt blocks tailored to design heuristics and accessibility.</p>
-            </div>
-          </div>
+      <div class="features">
+        <div class="card">
+          <h3>1-click Capture</h3>
+          <p>Snap your tab and let the AI analyse it instantly.</p>
+        </div>
+        <div class="card">
+          <h3>Overlay UI</h3>
+          <p>Lives quietly on the edge of your screen, never blocking your flow.</p>
+        </div>
+        <div class="card">
+          <h3>GPT-4 Vision</h3>
+          <p>Multimodal analysis tuned for interface patterns.</p>
+        </div>
+        <div class="card">
+          <h3>Privacy-first</h3>
+          <p>Uses your own OpenAI key — data stays with you.</p>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="container logos">
-      <div class="row" aria-label="For teams">
-        <div class="logo-pill">Designers</div>
-        <div class="logo-pill">PMs</div>
-        <div class="logo-pill">Front‑end</div>
-        <div class="logo-pill">QA</div>
-        <div class="logo-pill">Agencies</div>
-        <div class="logo-pill">Startups</div>
-      </div>
-    </div>
-  </header>
-
-  <!-- Features -->
-  <section id="features" class="section" aria-label="Features">
-    <div class="container grid-2">
-      <div>
-        <h2>Ship better UX, faster.</h2>
-        <p class="sub">Bring Stripe‑like polish to your product with lightweight guidance that meets you where you work.</p>
-        <div class="tick"><span class="b">✓</span><div>Edge overlay UI that never blocks clicks or scroll.</div></div>
-        <div class="tick"><span class="b">✓</span><div>Real‑time analysis using your own OpenAI key.</div></div>
-        <div class="tick"><span class="b">✓</span><div>Actionable suggestions mapped to 10 heuristic categories.</div></div>
-        <div class="tick"><span class="b">✓</span><div>Export insights to your issue tracker in one click.</div></div>
-      </div>
-      <div class="cards" role="list">
-        <div class="card" role="listitem">
-          <div class="eyebrow"><span class="pill">Capture</span><span>1‑click</span></div>
-          <h3>Instant page snapshot</h3>
-          <p>Capture the current tab and send it to the copilot. No uploads, no friction.</p>
-        </div>
-        <div class="card" role="listitem">
-          <div class="eyebrow"><span class="pill">Overlay</span><span>Assist</span></div>
-          <h3>Always out of the way</h3>
-          <p>Dock it to the edge. Summon when needed. It respects your flow.</p>
-        </div>
-        <div class="card" role="listitem">
-          <div class="eyebrow"><span class="pill">Vision</span><span>Models</span></div>
-          <h3>Pattern‑aware analysis</h3>
-          <p>Understands UI layouts, forms, controls and design systems.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Roadmap -->
-  <section class="section roadmap-section" aria-label="Roadmap">
-    <div class="container footer-container">
+    <section class="section" style="background:var(--card-bg);">
       <h2>Roadmap</h2>
-      <p class="sub">Focused on a strong, minimal MVP — then power features.</p>
-      <div class="pricing">
-        <div class="price">
-          <div class="tag">Milestone 1 — MVP</div>
-          <h3>MVP Extension</h3>
-          <div class="kicker">Capture • Overlay • Prompt blocks</div>
-          <ul class="small">
-            <li>Chrome/Edge extension</li>
-            <li>Local processing with your API key</li>
-            <li>Copy‑paste insight export</li>
-          </ul>
-        </div>
-        <div class="price">
-          <div class="tag">Milestone 2 — Pro</div>
-          <h3>Context & Dashboard</h3>
-          <div class="kicker">DOM context • Project history • Teams</div>
-          <ul class="small">
-            <li>DOM element detection</li>
-            <li>Workspace with saved sessions</li>
-            <li>Integrations (Jira, Linear)</li>
-          </ul>
-        </div>
+      <div class="roadmap">
+        <span class="pill">MVP Extension</span>
+        <span class="pill">DOM Context Detection</span>
+        <span class="pill">Smart Prompt Engine</span>
+        <span class="pill">SaaS Dashboard</span>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container footer-container">
-      <div class="foot">
-        <b>Whisperly</b><br/>
-        Contextual UX copilot. Pedro Figueras.<br/>
-        <span class="small">© 2025 — Beta</span>
-      </div>
-      <div class="foot">
-        <a class="btn linkedin-btn"
-           href="https://www.linkedin.com" target="_blank" rel="noopener"
-           aria-label="Contacta en LinkedIn">
-          Contacta en Linkedin
-        </a>
-        <!-- TODO: Reemplaza el enlace por tu URL de perfil de LinkedIn -->
-      </div>
-    </div>
-  </footer>
-</body>
+    <footer>
+      © 2025 Pedro Figueras — Whisperly • <a href="https://github.com/pedrofigueras-dev/Whisperly">GitHub</a>
+    </footer>
+  </body>
 </html>

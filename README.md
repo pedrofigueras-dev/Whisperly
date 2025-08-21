@@ -1,54 +1,26 @@
-# 🌬️ Whisperly — Beta 0.1
+# Whisperly  
+![Whisperly Logo](./logo-whisperly.jpg)
 
-![Whisperly Logo](./assets/logo-whisperly.jpg)
+> **Gentle guidance for any interface.**  
+> *Asistencia UX contextual, justo cuando la necesitas.*
 
-**Gentle guidance for any interface.**  
-_Contextual UX assistance, right when you need it._
+Whisperly is an AI-powered assistant for real-time UX guidance inside any interface. It lives in your browser and offers subtle, intelligent suggestions based on what you're seeing — no interruptions, just clarity.
 
-Whisperly is a lightweight UX/UI assistant that lives in your browser.  
-It captures your active tab and displays a **quick tip** in a **subtle overlay**.  
-This first version is a **minimal MVP** — functional but experimental.
+## 🚀 Features
+- One-click screen capture and UX analysis.
+- GPT-4 Vision-powered insights for any web interface.
+- Browser overlay: non-intrusive, always available.
+- Your data stays private: uses your own OpenAI API key.
 
----
-
-## ⚡ Installation (Developer Mode)
-
-1. Clone this repo and open Chrome/Edge at `chrome://extensions/`.
-2. Enable **Developer Mode**.
-3. Click **“Load unpacked”** and select the `/src` folder.
-
-> Note: the public landing page is in the **root**; the **extension** lives inside `/src`.
-
----
-
-## 🔑 Setup
-
-1. Click the Whisperly icon → the popup will open.
-2. Paste your **OpenAI API Key** (stored **locally only** in your browser).
-3. Press **“Capture & Analyze”**.
-
----
-
-## 🚀 What this version does (MVP)
-
-- Captures the current tab.
-- Displays an **overlay** with a UX/UI tip (currently simulated).
-- Privacy-first: your API key never leaves your browser.
-
-> Next step: connect the capture to OpenAI vision endpoints (GPT-4o / gpt-4.1-mini-vision) for real suggestions.
-
----
+## 🧪 Beta Version (For Technical Users)
+Whisperly beta requires you to connect your own OpenAI API key to ensure full control, privacy, and zero cost for the developer.
 
 ## 🗺️ Roadmap
-
-- [ ] Real vision call with heuristic prompts
-- [ ] Suggestions history
-- [ ] Overlay customization
-- [ ] Tracker integrations (Jira/Linear)
-
----
+- [ ] Chrome Extension MVP
+- [ ] DOM interaction analysis
+- [ ] Adaptive prompts and UI feedback loop
 
 ## 📜 License
+See LICENSE.md for details.
 
-This project is licensed under **CC BY-NC-SA 4.0**. See `LICENSE.md` for details.  
-© 2025 Pedro Figueras.
+**Whisperly is an original concept by Pedro Figueras © 2025. All rights reserved.**
