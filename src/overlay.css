@@ -1,0 +1,26 @@
+#whisperly-overlay{
+  position: fixed; inset: auto 16px 16px auto; z-index: 2147483647;
+  transform: translateY(10px); opacity: 0; pointer-events: none;
+  transition: transform .18s ease, opacity .18s ease;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+#whisperly-overlay.show{ transform: translateY(0); opacity: 1; pointer-events: auto; }
+#whisperly-overlay .whisp-card{
+  min-width: 300px; max-width: 380px;
+  background: #3c3c3b; color: #e7e9ec; border: 1px solid rgba(255,255,255,.08);
+  border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,.5);
+  padding-bottom: 36px; position: relative;
+}
+#whisperly-overlay .whisp-head{
+  padding: 10px 12px; font-weight: 800; background: #FFD300; color: #1b1b1b;
+  border-top-left-radius: 12px; border-top-right-radius: 12px;
+}
+#whisperly-overlay .whisp-body{ padding: 12px; font-size: 14px; line-height: 1.45; white-space: pre-wrap; }
+#whisperly-overlay .whisp-actions{
+  position: absolute; right: 8px; bottom: 8px; display: flex; gap: 6px;
+}
+#whisperly-overlay .whisp-actions button{
+  background: #555554; color:#e7e9ec; border:1px solid rgba(255,255,255,.08);
+  border-radius: 8px; padding: 6px 10px; cursor: pointer;
+}
+#whisperly-overlay .whisp-actions button:hover{ filter: brightness(1.1); }
